@@ -1,5 +1,9 @@
 // Import
 import 'package:flutter/material.dart';
+import 'package:plantchat/layouts/mobile_layout.dart';
+import 'package:plantchat/layouts/web_layout.dart';
+import 'package:plantchat/shared/colors.dart';
+import 'package:plantchat/utils/responsive_layout.dart';
 
 // Main function
 void main() {
@@ -12,6 +16,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Plantchat',
+      theme: ThemeData.light().copyWith(
+        scaffoldBackgroundColor: backgroundColor,
+      ),
+      home: const ResponsiveLayout(
+        mobileLayout: MobileLayout(),
+        webLayout: WebLayout(),
+      ),
+    );
   }
 }
