@@ -1,5 +1,6 @@
 // Import
 import 'package:flutter/material.dart';
+import 'package:plantchat/screens/empty_screen.dart';
 
 // Web layout class
 class WebLayout extends StatelessWidget {
@@ -7,6 +8,6 @@ class WebLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const EmptyScreen();
   }
 }

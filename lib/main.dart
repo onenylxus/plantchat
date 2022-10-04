@@ -1,16 +1,20 @@
 // Import
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:plantchat/firebase_options.dart';
 import 'package:plantchat/layouts/mobile_layout.dart';
 import 'package:plantchat/layouts/web_layout.dart';
-import 'package:plantchat/shared/colors.dart';
+import 'package:plantchat/constants/palette.dart';
 import 'package:plantchat/utils/responsive_layout.dart';
 
 // Main function
 void main() async {
   // Ensure binding is initialized
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Lock mobile orientation
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   // Initialize Firebase
   await Firebase.initializeApp(
@@ -30,8 +34,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Plantchat',
-      theme: ThemeData.light().copyWith(
-        scaffoldBackgroundColor: backgroundColor,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Palette.white,
+        splashColor: Palette.transparent,
+        highlightColor: Palette.transparent,
       ),
       home: const ResponsiveLayout(
         mobileLayout: MobileLayout(),
