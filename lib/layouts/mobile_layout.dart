@@ -2,8 +2,11 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:plantchat/constants/palette.dart';
 import 'package:plantchat/constants/dimens.dart';
+import 'package:plantchat/constants/palette.dart';
+import 'package:plantchat/constants/strings.dart';
+import 'package:plantchat/constants/styles.dart';
+import 'package:plantchat/screens/contacts_screen.dart';
 import 'package:plantchat/screens/empty_screen.dart';
 
 // Mobile layout class
@@ -17,36 +20,61 @@ class MobileLayout extends StatefulWidget {
 // Mobile layout state class
 class _MobileLayoutState extends State<MobileLayout> {
   final _colors = [
-    Palette.red,
     Palette.yellow,
+    Palette.lime,
     Palette.green,
+    Palette.cobalt,
     Palette.blue,
-    Palette.purple,
   ];
-  final PageController _controller = PageController(initialPage: 2);
-  int _index = 2;
+  final PageController _controller = PageController(initialPage: 1);
+  int _index = 1;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Palette.black,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: _colors[_index],
+        centerTitle: false,
+        title: const Text(
+          Strings.title,
+          style: Styles.textStyleAppBar,
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.search,
+              color: Palette.white,
+            ),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(
+              Icons.more_vert,
+              color: Palette.white,
+            ),
+            onPressed: () {},
+          ),
+        ],
+      ),
       body: PageView(
         controller: _controller,
-        children: <Widget>[
-          EmptyScreen(color: _colors[0]),
-          EmptyScreen(color: _colors[1]),
-          EmptyScreen(color: _colors[2]),
-          EmptyScreen(color: _colors[3]),
-          EmptyScreen(color: _colors[4]),
-        ],
         onPageChanged: (int index) {
           setState(() {
             _index = index;
           });
         },
+        children: <Widget>[
+          EmptyScreen(color: _colors[0]),
+          const ContactsScreen(),
+          EmptyScreen(color: _colors[2]),
+          EmptyScreen(color: _colors[3]),
+          EmptyScreen(color: _colors[4]),
+        ],
       ),
       bottomNavigationBar: SizedBox(
-        height: Platform.isIOS ? Dimens.iosBottomNavHeight : Dimens.androidBottomNavHeight,
+        height: Platform.isIOS ? Dimens.heightIOSBottomNav : Dimens.heightAndroidBottomNav,
         child: BottomNavigationBar(
           items: const<BottomNavigationBarItem>[
             BottomNavigationBarItem(

@@ -31,11 +31,13 @@ environment:
 dependencies:
   cloud_firestore: ^3.4.9
   cupertino_icons: ^1.0.2
+  faker: ^2.0.0
   firebase_auth: ^3.10.0
   firebase_core: ^1.23.0
   firebase_storage: ^10.3.9
   flutter:
     sdk: flutter
+  jiffy: ^5.0.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
