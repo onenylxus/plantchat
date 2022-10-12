@@ -5,6 +5,7 @@ import 'package:plantchat/constants/dimens.dart';
 import 'package:plantchat/constants/palette.dart';
 import 'package:plantchat/constants/styles.dart';
 import 'package:plantchat/models/contacts_data.dart';
+import 'package:plantchat/screens/chat_screen.dart';
 
 // Contacts item widget class
 class ContactsItem extends StatelessWidget {
@@ -22,7 +23,11 @@ class ContactsItem extends StatelessWidget {
       child: Column(
         children: [
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const ChatScreen()),
+              );
+            },
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: Dimens.paddingVerticalContactsItem),
               child: ListTile(

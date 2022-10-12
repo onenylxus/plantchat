@@ -11,6 +11,13 @@ class Styles {
     fontSize: Dimens.fontSizeAppBar,
     color: Palette.white,
   );
+  static const TextStyle textStyleChatMessage = TextStyle(
+    fontSize: Dimens.fontSizeChatMessage,
+  );
+  static const TextStyle textStyleChatProperty = TextStyle(
+    fontSize: Dimens.fontSizeChatProperty,
+    color: Palette.white,
+  );
   static const TextStyle textStyleContactsDate = TextStyle(
     fontSize: Dimens.fontSizeContactsDate,
     color: Palette.black,

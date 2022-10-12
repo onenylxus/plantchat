@@ -2,8 +2,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:plantchat/firebase_options.dart';
 import 'package:plantchat/constants/palette.dart';
+import 'package:plantchat/constants/strings.dart';
+import 'package:plantchat/firebase_options.dart';
 import 'package:plantchat/layouts/mobile_layout.dart';
 import 'package:plantchat/layouts/responsive_layout.dart';
 import 'package:plantchat/layouts/web_layout.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Plantchat',
+      title: Strings.title,
       theme: ThemeData(
         scaffoldBackgroundColor: Palette.white,
         splashColor: Palette.transparent,
