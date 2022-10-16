@@ -17,10 +17,10 @@ class ChatItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AlignmentGeometry alignment = data.self ? Alignment.centerRight : Alignment.centerLeft;
-    Color color = data.self ? Palette.lime : Palette.cobalt;
-    double bottom = data.self ? Dimens.bottomChatItemSelf : Dimens.bottomChatItemReceived;
-    Widget child;
+    final AlignmentGeometry alignment = data.self ? Alignment.centerRight : Alignment.centerLeft;
+    final Color color = data.self ? Palette.lime : Palette.cobalt;
+    final double bottom = data.self ? Dimens.bottomChatItemSelf : Dimens.bottomChatItemReceived;
+    final Widget child;
 
     if (data.self) {
       child = Row(
@@ -29,10 +29,10 @@ class ChatItem extends StatelessWidget {
             Jiffy(data.date).Hm,
             style: Styles.textStyleChatProperty,
           ),
-          const SizedBox(width: 5),
+          const SizedBox(width: Dimens.widthChatTextGap),
           const Icon(
             Icons.done_all,
-            size: 20,
+            size: Dimens.sizeChatTextDone,
             color: Palette.white,
           ),
         ],
@@ -59,7 +59,6 @@ class ChatItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(Dimens.borderRadiusChatItem),
           ),
           color: color,
-          elevation: 1,
           child: Stack(
             children: [
               Padding(

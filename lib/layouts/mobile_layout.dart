@@ -31,6 +31,8 @@ class _MobileLayoutState extends State<MobileLayout> {
 
   @override
   Widget build(BuildContext context) {
+    final double height = Platform.isIOS ? Dimens.heightIOSBottomNav : Dimens.heightAndroidBottomNav;
+
     return Scaffold(
       backgroundColor: Palette.black,
       appBar: AppBar(
@@ -74,9 +76,9 @@ class _MobileLayoutState extends State<MobileLayout> {
         ],
       ),
       bottomNavigationBar: SizedBox(
-        height: Platform.isIOS ? Dimens.heightIOSBottomNav : Dimens.heightAndroidBottomNav,
+        height: height,
         child: BottomNavigationBar(
-          items: const<BottomNavigationBarItem>[
+          items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.location_on_outlined),
               label: '',

@@ -9,6 +9,7 @@ class Dimens {
 
   // Width
   static const double widthResponsive = 938.0;
+  static const double widthChatTextGap = 5.0;
 
   // Height
   static const double heightAndroidBottomNav = 60.0;
@@ -47,6 +48,9 @@ class Dimens {
 
   // Padding vertical
   static const double paddingVerticalContactsItem = 4.0;
+
+  // Size
+  static const double sizeChatTextDone = 20.0;
 
   // Font size
   static const double fontSizeAppBar = 20.0;

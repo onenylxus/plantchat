@@ -29,7 +29,9 @@ class ContactsItem extends StatelessWidget {
               );
             },
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: Dimens.paddingVerticalContactsItem),
+              padding: const EdgeInsets.symmetric(
+                vertical: Dimens.paddingVerticalContactsItem,
+              ),
               child: ListTile(
                 title: Text(
                   data.name,

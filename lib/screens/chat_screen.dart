@@ -1,26 +1,14 @@
 // Import
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:plantchat/constants/dimens.dart';
 import 'package:plantchat/constants/palette.dart';
 import 'package:plantchat/constants/strings.dart';
-import 'package:plantchat/models/chat_data.dart';
 import 'package:plantchat/utils/random_data.dart';
-import 'package:plantchat/widgets/chat_item.dart';
+import 'package:plantchat/widgets/chat_list.dart';
 
 // Chat screen class
 class ChatScreen extends StatelessWidget {
   const ChatScreen({ super.key });
-
-  Widget _delegate(BuildContext context, int index) {
-    return ChatItem(
-      data: ChatData(
-        self: Random().nextBool(),
-        message: RandomData.getSentence(),
-        date: RandomData.getDate(),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,15 +44,7 @@ class ChatScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Expanded(
-            child: CustomScrollView(
-              slivers: [
-                SliverList(
-                  delegate: SliverChildBuilderDelegate(_delegate),
-                ),
-              ]
-            ),
-          ),
+          const Expanded(child: ChatList()),
           TextField(
             decoration: InputDecoration(
               border: const OutlineInputBorder(
