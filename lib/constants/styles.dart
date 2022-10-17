@@ -28,4 +28,10 @@ class Styles {
   static const TextStyle textStyleContactsName = TextStyle(
     fontSize: Dimens.fontSizeContactsName,
   );
+  static const TextStyle textStyleWebChatAppBarName = TextStyle(
+    fontSize: Dimens.fontSizeWebChatAppBarName,
+  );
+  static const TextStyle textStyleWebSearchBar = TextStyle(
+    fontSize: Dimens.fontSizeWebSearchBar,
+  );
 }
